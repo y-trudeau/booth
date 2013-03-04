@@ -27,7 +27,7 @@ static void pcmk_grant_ticket(const void *ticket)
 	FILE *p;
 	char cmd[COMMAND_MAX];
 
-	snprintf(cmd, COMMAND_MAX, "crm_ticket -t %s -g --force",
+	snprintf(cmd, COMMAND_MAX, "crm_ticket -t %s -v true --force",
 		 (char *)ticket);
 	log_info("command: '%s' was executed", cmd);
 	p = popen(cmd, "r");
